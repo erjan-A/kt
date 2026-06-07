@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>KT OS Guide</title>
-    <meta name="description" content="История и практическое руководство по KT OS: системная папка, проекты, skills, automations, MCP, Telegram, TranscriptAPI, база знаний и YouTube digest.">
-    <link rel="stylesheet" href="styles.css?v=20260607-layout2">
+    <meta name="description" content="История и практическое руководство по KT OS: системная папка, проекты, skills, automations, MCP, Telegram, база знаний и YouTube digest.">
+    <link rel="stylesheet" href="styles.css?v=20260607-guide3">
   </head>
   <body>
     <div class="topbar">
@@ -139,7 +139,7 @@
               <div class="flow-row">
                 <div class="flow-node"><strong>Входы</strong><span>Lotus, Telegram, Plane, встречи, YouTube, файлы</span></div>
                 <i>→</i>
-                <div class="flow-node"><strong>Tools</strong><span>MCP, connectors, APIs, TranscriptAPI</span></div>
+                <div class="flow-node"><strong>Tools</strong><span>MCP, connectors, browser, Telegram</span></div>
                 <i>→</i>
                 <div class="flow-node"><strong>Router</strong><span>`00_Система`, правила, checklists</span></div>
               </div>
@@ -194,7 +194,7 @@
             какой источник открыть, какой skill использовать, какие проверки сделать и где остановиться. Чем
             яснее router, тем меньше случайных чтений, выдуманных фактов и лишних уточняющих вопросов.
           </p>
-          <div class="prompt-block" data-prompt="Сделай для моей рабочей папки START_HERE.md и TASK_ROUTER.md. Сначала определи типы задач, источники, что можно менять сразу, где нужно подтверждение, и как проверять результат.">
+          <div class="prompt-block" data-prompt="Открой мою рабочую папку и предложи системный слой для AI OS. Не меняй файлы сразу. Сначала дай структуру START_HERE.md, TASK_ROUTER.md и короткого checklist. Для каждого файла напиши: зачем он нужен, что агент должен читать первым, что можно делать без подтверждения, где нужен мой review, как проверять результат. Если в папке уже есть похожие файлы, покажи, что именно лучше обновить.">
             <div><span>Prompt Copy</span><strong>Создать системный слой</strong></div>
             <button type="button">Copy</button>
           </div>
@@ -229,7 +229,7 @@
             <div><strong>Паспорта и PRD</strong><span>документы, которые можно показать бизнес-заказчику или руководителю</span></div>
             <div><strong>Разработка или prototype</strong><span>код, демо, JSON, скрипты, тестовые данные, если проект уже дошёл до реализации</span></div>
           </div>
-          <div class="prompt-block" data-prompt="Создай шаблон КОНТЕКСТ.md для моего проекта: цель, пользователь, текущий статус, источники, решения, blockers, next actions, open questions, связанные файлы. Не выдумывай факты.">
+          <div class="prompt-block" data-prompt="Для проекта PROJECT_PATH создай черновик КОНТЕКСТ.md. Сначала прочитай доступные материалы внутри проекта. Затем выдели: цель, пользователь, текущий статус, важные решения, открытые вопросы, blockers, next actions, связанные файлы. Не выдумывай факты. Если данных нет, пиши не найдено. Перед записью файла покажи черновик и спроси подтверждение.">
             <div><span>Prompt Copy</span><strong>Создать проектный контекст</strong></div>
             <button type="button">Copy</button>
           </div>
@@ -245,7 +245,7 @@
           <p>
             В `05_Скиллы/Codex` уже есть skills для паспортов AI-агентов, тарифного калькулятора, project update,
             project briefing, бизнес-аналитического intake, CEO-review, knowledge capture, Lotus email draft,
-            prompt improvement, YouTube daily/manual digest и follow-up задач через Telegram.
+            prompt improvement, YouTube digest и follow-up задач через Telegram.
           </p>
           <p>
             Это отражает мой рабочий стиль: если процедура повторилась несколько раз, я не хочу держать её в
@@ -257,15 +257,15 @@
           </p>
           <p>
             Skill - это операционная память. Он сохраняет не “что мы знаем”, а “как мы делаем работу”. Например,
-            passport skill знает, как собрать Word-документ; project-update знает, когда обновлять `КОНТЕКСТ.md`;
-            YouTube digest знает, когда остановиться, если TranscriptAPI не дал transcript. В этом сила skills:
-            они превращают удачный рабочий разговор в повторяемую процедуру.
+            passport skill помогает собрать паспорт агента, project-update аккуратно переносит новый сигнал в
+            проектный контекст, а YouTube digest превращает полезное видео в заметку, которую можно применить
+            к моим проектам. В этом сила skills: удачный рабочий разговор становится повторяемой процедурой.
           </p>
           <div class="layer-table">
             <div><strong>project-update</strong><span>обновляет проектный `КОНТЕКСТ.md` по новым сигналам</span></div>
             <div><strong>ai-agent-passport</strong><span>создаёт паспорт AI-агента в Word</span></div>
             <div><strong>business-analyst-project-intake</strong><span>помогает разбирать новую AI-инициативу</span></div>
-            <div><strong>youtube-daily-digest</strong><span>ежедневно обрабатывает 3 видео и отправляет в Telegram</span></div>
+            <div><strong>youtube-daily-digest</strong><span>берёт новые видео из моего списка и делает KT-relevant digest</span></div>
             <div><strong>ba-task-followup</strong><span>утренний Telegram follow-up по задачам аналитиков через Plane</span></div>
           </div>
         </section>
@@ -287,11 +287,11 @@
           </p>
           <p>
             Поэтому Telegram в моей системе работает как интерфейс, а не как память. Он может собрать короткий
-            update, напомнить аналитику о задаче, отправить digest или доставить результат. Но после этого
-            важный факт должен попасть туда, где он будет жить дальше: проектный контекст, Plane, Реестр,
-            daily sync или state-файл automation.
+            update, напомнить аналитику о задаче, отправить digest или доставить результат. Но если сообщение
+            меняет проект, оно должно попасть туда, где команда потом действительно будет его искать: в проектный
+            контекст, задачу, реестр или итоговый digest.
           </p>
-          <div class="prompt-block" data-prompt="Опиши для моей команды Telegram workflow: какие сообщения можно принимать как вход, где source of truth, что можно отправлять автоматически, где нужно подтверждение, как хранить state и audit trail.">
+          <div class="prompt-block" data-prompt="Помоги мне спроектировать простой Telegram workflow для моей рабочей папки. Сначала определи, какие сообщения могут быть входом, какие результаты можно отправлять обратно в Telegram, где должна жить финальная правда по проекту, и где обязательно нужен мой review перед отправкой. Не предлагай интеграции, которых нет в моей среде. Верни только понятную схему: вход, действие, источник правды, результат, проверка.">
             <div><span>Prompt Copy</span><strong>Спроектировать Telegram workflow</strong></div>
             <button type="button">Copy</button>
           </div>
@@ -315,22 +315,22 @@
           </p>
           <p>
             MCP и connectors дают ассистенту глаза и руки. Без них он видит только текст в чате. С ними он может
-            читать файлы, проверять страницу в browser, работать с документами, получать transcript, смотреть
-            задачи и готовить результат в нужном формате. Но каждый такой доступ должен быть описан: что можно
-            читать, что можно менять, где нужен approval и как проверить результат.
+            читать рабочие файлы, проверять веб-страницу, готовить документы, смотреть задачи и собирать материал
+            из разных источников. Но каждый такой доступ должен быть понятен: что можно читать, что можно менять,
+            где нужен мой review и как проверить результат.
           </p>
           <div class="layer-table">
             <div><strong>MCP / connectors</strong><span>дают доступ к рабочим источникам: файлам, браузеру, Google-сервисам, задачам и другим системам</span></div>
-            <div><strong>TranscriptAPI</strong><span>получает transcript YouTube-видео. Если transcript не найден, YouTube workflow останавливается</span></div>
+            <div><strong>YouTube content</strong><span>помогает разбирать видео не по названию, а по реальному содержанию</span></div>
             <div><strong>Telegram</strong><span>канал входа и доставки: reminders, короткие updates, YouTube summaries, follow-up задач</span></div>
-            <div><strong>Browser / Chrome</strong><span>проверка веб-страниц, локальных интерфейсов, скриншотов и текущего browser state</span></div>
+            <div><strong>Browser / Chrome</strong><span>проверка веб-страниц, прототипов, интерфейсов и визуальных изменений</span></div>
             <div><strong>Word / Docs workflow</strong><span>паспорта AI-агентов, PRD, briefing, документы для руководителя или бизнес-заказчика</span></div>
             <div><strong>Plane / Sheets / Lotus</strong><span>задачи, реестр, письма и операционные сигналы, которые должны попадать в правильный source of truth</span></div>
           </div>
           <div class="quote-block">
             <p>Инструмент без правила опасен. Правило без инструмента медленное. KT OS соединяет оба слоя.</p>
           </div>
-          <div class="prompt-block" data-prompt="Опиши инструментальный слой моей AI OS: какие MCP, connectors и APIs нужны, какие источники они читают, какие действия могут выполнять, где нужен human approval, и как проверять результат.">
+          <div class="prompt-block" data-prompt="Осмотри мою рабочую папку и опиши tools layer для моей AI OS. Раздели инструменты на 4 группы: что читает источники, что помогает писать документы, что проверяет результат, что отправляет или доставляет итог. Для каждого инструмента укажи простыми словами: зачем он нужен, какой источник правды он использует, что можно делать без меня, где нужен мой review. Не уходи в детали реализации, пиши для коллеги BA/PM/PMM.">
             <div><span>Prompt Copy</span><strong>Спроектировать tools layer</strong></div>
             <button type="button">Copy</button>
           </div>
@@ -361,14 +361,15 @@
         <section id="youtube" class="section">
           <h2>9. YouTube-дайджест</h2>
           <p>
-            YouTube digest - один из самых понятных примеров, как работает моя OS. Каждый день automation берёт
-            до 3 новых видео из playlist `To Summarize`, получает transcript, пишет summary на русском с
-            привязкой к KT, сохраняет transcript, обновляет daily digest и `.state/processed.json`.
+            YouTube digest - один из самых понятных примеров, как работает моя OS. В моём YouTube account есть
+            playlist `To Summarize`: когда я вижу полезное видео, я просто добавляю его туда. Дальше система
+            берёт несколько новых видео из этого списка и делает digest на русском с привязкой к KT и моим
+            личным проектам.
           </p>
           <p>
-            После успешной записи файлов summary уходит в Telegram через bot route. Если TranscriptAPI не дал
-            транскрипт, workflow останавливается. Если Telegram не отправился после записи файлов, файлы не
-            откатываются: система сохраняет результат, а отправку можно чинить отдельно.
+            Для меня это удобно потому, что я не пытаюсь помнить, какое видео где видел. Playlist становится
+            лёгким inbox для идей: добавил видео, утром получил сжатый разбор, а хорошие мысли уже связаны
+            с проектами, skills и возможными next actions.
           </p>
           <p>
             Самое ценное не в том, что AI пересказывает видео. Это может сделать любой summary tool. Ценность в
@@ -384,10 +385,18 @@
             пока нет проверки качества.
           </p>
           <div class="layer-table">
-            <div><strong>videos/{slug}.md</strong><span>саммари, тезисы, возможности для KT, как применить сегодня</span></div>
-            <div><strong>transcripts/{slug}.md</strong><span>полный транскрипт для последующих вопросов</span></div>
-            <div><strong>digests/YYYY-MM-DD.md</strong><span>ежедневная лента со ссылками на summary и transcript</span></div>
-            <div><strong>.state/processed.json</strong><span>реестр videoId, чтобы не обрабатывать одно и то же дважды</span></div>
+            <div><strong>Суть</strong><span>одно короткое объяснение, почему видео стоит внимания</span></div>
+            <div><strong>Тезисы</strong><span>2-5 мыслей, которые можно быстро прочитать между встречами</span></div>
+            <div><strong>Возможности для KT</strong><span>где это может лечь на реальные проекты, skills или процессы</span></div>
+            <div><strong>Как применить сегодня</strong><span>маленький следующий шаг, который можно попробовать без большого проекта</span></div>
+          </div>
+          <div class="digest-example">
+            <span>Пример из моего digest</span>
+            <h3>Why We Switched From Claude Code to Codex</h3>
+            <div><strong>Суть</strong><ul><li>Agent desktop может стать рабочей OS для knowledge work, если подключить к нему файлы, источники и review.</li><li>Ценность появляется не в одном умном чате, а в рабочей среде, где AI видит контекст проекта.</li></ul></div>
+            <div><strong>Тезисы</strong><ul><li>Codex используют не только для кода, а для писем, планов, research и операционных задач.</li><li>Сила не в одном чате, а в связке: источники, папки, sub-agents, automations и review.</li></ul></div>
+            <div><strong>Возможности для KT</strong><ul><li>Сделать AI OS точкой входа в проектный контекст, а не отдельным chatbot.</li><li>Использовать review-step перед письмом, паспортом, PRD или материалом для руководителя.</li></ul></div>
+            <div><strong>Как применить сегодня</strong><ul><li>Взять один активный проект и попросить Codex предложить 3 полезные automations по его контексту.</li><li>Сохранить лучший workflow как skill, чтобы не объяснять его заново.</li></ul></div>
           </div>
         </section>
 
@@ -407,7 +416,7 @@
             Для любого проекта с LLM я сначала проверяю гипотезу на сильных proprietary top models. Нужно быстро
             понять: задача вообще решается, качество достаточно хорошее, workflow можно проверить. Только после
             этого есть смысл оптимизировать систему: менять модель, удешевлять запуск, переносить часть логики
-            в локальные open-source LLMs, добавлять state, кеширование, guardrails или более узкие prompts.
+            в локальные open-source LLMs, добавлять более строгие проверки, templates или более узкие prompts.
           </p>
           <p>
             Это защищает от преждевременной инженерии. Если сильная модель не может стабильно решить задачу,
@@ -444,11 +453,11 @@
             <p>Минимальная цель на первый час: один проектный `КОНТЕКСТ.md`, один router, один reusable prompt и ясный ответ на вопрос “где теперь живёт правда по этому проекту?”</p>
           </div>
           <div class="prompt-stack">
-            <div class="prompt-block" data-prompt="Создай мне starter kit личной OS для работы с AI. Структура: 00_Система, 01_Проекты, 02_Источники, 03_База знаний, 04_Шаблоны, 05_Скиллы, 06_Автоматизация. Для каждого слоя создай README и объясни, что туда класть.">
+            <div class="prompt-block" data-prompt="Создай starter kit личной AI OS для моей работы. Сначала спроси название моей роли и 1-2 главных типа проектов. Потом предложи структуру папок: 00_Система, 01_Проекты, 02_Источники, 03_База знаний, 04_Шаблоны, 05_Скиллы, 06_Автоматизация. Для каждой папки дай короткий README-текст и первый практический шаг. Перед созданием файлов покажи план.">
               <div><span>Prompt Copy</span><strong>Скопировать структуру</strong></div>
               <button type="button">Copy</button>
             </div>
-            <div class="prompt-block" data-prompt="Посмотри на мою текущую рабочую папку и предложи, какие 3 skills и 2 automations стоит создать первыми. Выбирай только по повторяемости, риску ошибки и понятности workflow.">
+            <div class="prompt-block" data-prompt="Осмотри мою рабочую папку и выбери первые 3 skills и 2 automations. Используй критерии: повторяемость, риск ошибки, частота, наличие source of truth, простота проверки и польза для текущих проектов. Для каждого кандидата укажи, почему именно сейчас, какие источники читать, какой результат должен получиться и где нужен мой review. Не создавай файлы без подтверждения.">
               <div><span>Prompt Copy</span><strong>Выбрать первые skills</strong></div>
               <button type="button">Copy</button>
             </div>
@@ -477,6 +486,6 @@
     </div>
 
     <div class="copy-toast" role="status" aria-live="polite">Copied</div>
-    <script src="script.js?v=20260607-layout2"></script>
+    <script src="script.js?v=20260607-guide3"></script>
   </body>
 </html>

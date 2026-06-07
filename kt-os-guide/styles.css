@@ -139,6 +139,8 @@ button {
 .switch-icon {
   position: absolute;
   z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
   width: 16px;
   height: 16px;
   color: currentColor;
@@ -151,7 +153,7 @@ button {
 }
 
 .switch-icon-moon {
-  right: 11px;
+  right: 9px;
 }
 
 .icon {
@@ -690,6 +692,62 @@ h1 {
   color: var(--fg-muted);
 }
 
+.digest-example {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--bg-soft);
+}
+
+.digest-example > span {
+  display: block;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--divider);
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.digest-example h3 {
+  padding: 16px;
+  border-bottom: 1px solid var(--divider);
+  color: var(--fg-strong);
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.digest-example div {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 18px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--divider);
+}
+
+.digest-example div:last-child {
+  border-bottom: 0;
+}
+
+.digest-example strong {
+  color: var(--fg-strong);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.digest-example ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--fg-muted);
+}
+
+.digest-example li {
+  line-height: 1.42;
+}
+
+.digest-example li + li {
+  margin-top: 6px;
+}
+
 .mode-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -889,7 +947,7 @@ h1 {
   color: var(--fg);
   font-family: var(--font-mono);
   font-size: 11px;
-  line-height: 1.55;
+  line-height: 1.38;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
@@ -994,6 +1052,7 @@ h1 {
 
   .loop-list li,
   .layer-table div,
+  .digest-example div,
   .principles-grid div,
   .build-steps div {
     grid-template-columns: 1fr;
