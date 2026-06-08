@@ -369,6 +369,7 @@ h1 {
 .principles-grid,
 .first-step,
 .prompt-block,
+.mobile-rail-note,
 .layer-table,
 .mode-grid,
 .human-strip,
@@ -913,20 +914,32 @@ h1 {
   background: var(--bg);
 }
 
-.rail-note span {
+.mobile-rail-note {
+  display: none;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--bg);
+}
+
+.rail-note span,
+.mobile-rail-note span {
   color: var(--primary);
   font-family: var(--font-mono);
   font-size: 12px;
 }
 
-.rail-note h3 {
+.rail-note h3,
+.mobile-rail-note h3 {
   margin-top: 8px;
   color: var(--fg-strong);
   font-size: 16px;
   line-height: 1.25;
 }
 
-.rail-note p {
+.rail-note p,
+.mobile-rail-note p {
   margin-top: 10px;
   color: var(--fg-muted);
   font-size: 13px;
@@ -934,8 +947,8 @@ h1 {
 }
 
 .rail-example {
-  margin: 14px 0 0;
-  padding: 12px;
+  margin: 10px 0 0;
+  padding: 10px;
   overflow: visible;
   max-height: none;
   border: 1px solid var(--border);
@@ -947,7 +960,7 @@ h1 {
   color: var(--fg);
   font-family: var(--font-mono);
   font-size: 11px;
-  line-height: 1.38;
+  line-height: 1.26;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
@@ -1002,6 +1015,14 @@ h1 {
     position: static;
     height: auto;
     padding: 18px 0 0;
+  }
+
+  .agent-rail {
+    display: none;
+  }
+
+  .mobile-rail-note {
+    display: block;
   }
 
   .contents-nav {
