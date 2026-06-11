@@ -7,14 +7,14 @@ const railBody = document.querySelector("[data-rail-body]");
 const railKicker = document.querySelector("[data-rail-kicker]");
 const currentExample = document.querySelector("[data-current-example]");
 const currentCopy = document.querySelector("[data-current-copy]");
-const themeToggle = document.querySelector(".theme-toggle");
+const themeToggle = document.querySelector(".kt-ai-theme-toggle");
 const toast = document.querySelector(".copy-toast");
 
 const railData = {
   story: {
     title: "Что это такое",
-    body: "Codex для меня не просто чат, а agent management interface: место, где рабочие агенты читают контекст, используют tools и возвращают результат.",
-    example: "Старт:\n1. Наговорить голосом роль и проект.\n2. Превратить transcript в контекст.\n3. Разложить память по слоям.\n4. Сделать первый reusable workflow.",
+    body: "Codex для меня не просто чат, а среда управления агентами: место, где рабочие агенты читают контекст, используют инструменты и возвращают результат.",
+    example: "Старт:\n1. Наговорить голосом роль и проект.\n2. Превратить запись в контекст.\n3. Разложить память по слоям.\n4. Сделать первый повторяемый рабочий процесс.",
     copy: `Role: You are my AI OS setup assistant.
 Task: Turn my raw voice notes into the first context for a personal Codex OS.
 Goal: Help me stop re-briefing every new AI chat from zero.
@@ -61,7 +61,7 @@ Constraints: write "не найдено" for gaps, do not invent owners, dates, 
   },
   skills: {
     title: "Skills",
-    body: "Skills бывают стабильные и диалоговые: одни каждый раз делают одно и то же, другие помогают с judgement и review.",
+    body: "Skills бывают стабильные и диалоговые: одни каждый раз делают одно и то же, другие помогают с оценкой по ситуации и проверкой.",
     example: "Простые skills:\nproject-update\nkt-project-briefing\nyoutube-daily-digest\nba-task-followup\n\nУмные skills:\nceo-strategy-reviewer\nbusiness-analyst-project-intake\nkt-session-compound",
     copy: `Role: You are my workflow-to-skill analyst.
 Task: Find which repeated tasks should become skills.
@@ -130,8 +130,8 @@ Constraints: do not invent sources, do not summarize videos by title only.`,
   },
   choose: {
     title: "Как выбрать, что строить",
-    body: "Сначала докажите, что гипотеза работает на сильной модели. Потом оптимизируйте стоимость, скорость и deployment.",
-    example: "Пример фильтра:\nTop model first -> проверить возможно ли\nVerify before build -> как проверить\nMiddle-to-middle -> человек -> AI -> человек\nOptimize later -> local LLM, кеш, prompts, guardrails",
+    body: "Сначала докажите, что гипотеза работает на сильной модели. Потом оптимизируйте стоимость, скорость и развёртывание.",
+    example: "Пример фильтра:\nTop model first -> проверить возможно ли\nVerify before build -> как проверить\nЧеловек в начале и в конце -> человек -> AI -> человек\nOptimize later -> local LLM, кеш, prompts, guardrails",
     copy: `Role: You are my build-prioritization coach.
 Task: Decide what should become a prompt, template, skill, or automation.
 Goal: Build only what is useful, repeatable, and checkable.

@@ -3,21 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Codex OS для knowledge work</title>
-    <meta name="description" content="Power-user guide по превращению Codex и рабочей папки в operating system для knowledge work: setup, workflows, skills, automations, база знаний и семидневный starter plan.">
-    <link rel="stylesheet" href="styles.css?v=20260608-guide8">
+    <title>KT OS для интеллектуальной работы</title>
+    <meta name="description" content="Практический гайд о том, как превратить рабочую папку в операционную систему для интеллектуальной работы: настройка, рабочие процессы, навыки, автоматизации, база знаний и семидневный стартовый план. Движок — Codex.">
+    <link rel="stylesheet" href="assets/kt-ai-tokens.css?v=20260611-ds2">
+    <link rel="stylesheet" href="assets/kt-ai-components.css?v=20260611-ds2">
+    <link rel="stylesheet" href="styles.css?v=20260611-ds2">
   </head>
-  <body>
+  <body class="kt-ai-app">
     <div class="topbar">
       <div class="topbar-inner">
         <a class="topbar-brand" href="#top" aria-label="KT AI">
           <img src="assets/ktai.svg" alt="KT AI">
-          <span>Codex OS Guide</span>
+          <span>KT OS Guide</span>
         </a>
-        <button class="theme-toggle kt-ai-switch-toggle" type="button" aria-label="Переключить тему" title="Переключить тему" data-mode="dark">
-          <span class="switch-thumb" aria-hidden="true"></span>
-          <svg class="switch-icon switch-icon-sun" aria-hidden="true"><use href="assets/kt-ai-lucide-sprite.svg#sun"></use></svg>
-          <svg class="switch-icon switch-icon-moon" aria-hidden="true"><use href="assets/kt-ai-lucide-sprite.svg#moon"></use></svg>
+        <button class="kt-ai-theme-toggle" type="button" aria-label="Переключить тему" title="Переключить тему" data-mode="dark">
+          <svg class="tic tic-sun" aria-hidden="true"><use href="assets/kt-ai-lucide-sprite.svg#sun"></use></svg>
+          <svg class="tic tic-moon" aria-hidden="true"><use href="assets/kt-ai-lucide-sprite.svg#moon"></use></svg>
+          <span class="thumb" aria-hidden="true">
+            <svg class="ic ic-sun" aria-hidden="true"><use href="assets/kt-ai-lucide-sprite.svg#sun"></use></svg>
+            <svg class="ic ic-moon" aria-hidden="true"><use href="assets/kt-ai-lucide-sprite.svg#moon"></use></svg>
+          </span>
         </button>
       </div>
     </div>
@@ -37,7 +42,7 @@
             <a href="#knowledge">8. База знаний</a>
             <a href="#youtube">9. YouTube-дайджест</a>
             <a href="#choose">10. Как выбрать, что строить</a>
-            <a href="#copy">11. Семидневный starter plan</a>
+            <a href="#copy">11. Семидневный стартовый план</a>
           </nav>
         </div>
       </aside>
@@ -48,11 +53,11 @@
             <span>Guide</span>
             <span>KT AI</span>
             <span>Автор: Ержан Асанов</span>
-            <span>Версия 0.9</span>
-            <span>Обновлено: 8 июня 2026</span>
+            <span>Версия 1.0</span>
+            <span>Обновлено: 11 июня 2026</span>
           </div>
-          <h1>Codex OS для knowledge work</h1>
-          <p class="subtitle">Power-user guide о том, как превратить Codex и рабочую папку в operating system для knowledge work: setup, workflows, skills, automations, Telegram, MCP и семидневный starter plan для коллег.</p>
+          <h1>KT OS для интеллектуальной работы</h1>
+          <p class="subtitle">Практический гайд о том, как превратить рабочую папку в операционную систему для интеллектуальной работы: настройка, рабочие процессы, навыки, автоматизации, Telegram, MCP и семидневный стартовый план для коллег. Я собрал её на Codex, но принцип не привязан к одному инструменту.</p>
         </header>
 
         <section id="story" class="section">
@@ -99,13 +104,13 @@
             он должен знать, где его прочитать.
           </p>
           <p>
-            Поэтому Codex для меня не просто чат и не только coding tool. Это agent management interface:
-            место, где я управляю агентами для knowledge work. Один агент читает проектный контекст, другой
+            Поэтому Codex для меня не просто чат и не только инструмент для кода. Это среда управления агентами:
+            место, где я управляю агентами для интеллектуальной работы. Один агент читает проектный контекст, другой
             готовит briefing, третий проверяет письмо, четвёртый собирает digest или прототип. Смысл не в том,
             чтобы “поговорить с AI”, а в том, чтобы дать ему рабочее место и понятную задачу.
           </p>
           <p>
-            В этом смысле KT OS работает как мой chief of staff. Простыми словами, это рабочая память и
+            В этом смысле KT OS работает как мой помощник-координатор (chief of staff). Простыми словами, это рабочая память и
             координационный слой: он держит контекст, готовит briefing, напоминает о решениях, связывает людей
             и источники, поднимает риски и помогает довести задачу до следующего действия. В моей версии эту роль
             частично выполняет Codex.
@@ -201,7 +206,7 @@
                 <div class="flow-node"><strong>KB</strong><span>AI Knowledge Base, YouTube, reusable insights</span></div>
                 <div class="flow-node"><strong>Skills</strong><span>повторяемые workflows и stop rules</span></div>
                 <div class="flow-node"><strong>Automations</strong><span>daily sync, Telegram, health checks</span></div>
-                <div class="flow-node"><strong>Compound</strong><span>новый prompt, template или skill</span></div>
+                <div class="flow-node"><strong>Накопление (compound)</strong><span>новый prompt, template или skill</span></div>
               </div>
             </div>
           </figure>
@@ -374,7 +379,7 @@
           <p>
             Я делю skills на два типа. Есть “простые” skills, которые должны каждый раз делать одно и то же:
             обновить проект, собрать briefing, отправить reminder, обработать digest. Они ценны стабильностью.
-            Есть “умные” skills, где нужен диалог и judgement: CEO-review, strategy review, business intake,
+            Есть “умные” skills, где нужен диалог и оценка по ситуации: CEO-review, strategy review, business intake,
             выбор первых automations. Они не заменяют решение, а помогают увидеть слабые места до того, как
             материал уйдёт людям.
           </p>
@@ -444,7 +449,7 @@
             <div><strong>YouTube daily digest</strong><span>каждое утро превращает новые видео из моего списка в KT-relevant идеи</span></div>
             <div><strong>BA task reminders</strong><span>напоминает аналитикам о задачах Plane через Telegram</span></div>
             <div><strong>BA update collector</strong><span>собирает ответы аналитиков и помогает понять, что стало done, progress, blocker или new task</span></div>
-            <div><strong>Weekly hygiene</strong><span>раз в неделю проверяет структуру папки, navigation, skills drift и cleanup candidates</span></div>
+            <div><strong>Еженедельная гигиена</strong><span>раз в неделю проверяет структуру папки, навигацию, расхождения в навыках и кандидатов на чистку</span></div>
           </div>
           <div class="prompt-block" data-prompt="Role: Codex OS automation reviewer. Task: look at my current work folder and suggest the first automations I should build. Goal: find repeated work that is useful, safe, and easy to review. Context: I may be starting from a blank folder or an early Codex OS. If folders exist, inspect AGENTS.md, START_HERE.md, project contexts, skills, and recent notes. If not, ask for my role, projects, and repeated tasks. Steps: identify repeated tasks; separate prompts, templates, skills, and automations; define inputs, source of truth, output, review point, and risk; mark what should not be automated yet. Output format: Top 5 candidates, why it matters, source of truth, human review point, first safe version. Constraints: do not create files, send messages, or change automations without approval. Do not invent tools or integrations I do not have.">
             <div><span>Prompt Copy</span><strong>Найти первые automations</strong></div>
@@ -459,7 +464,7 @@
             рассуждать по тексту в чате. С tools он может проверить файл, страницу, задачу или документ.
           </p>
           <p>
-            Чтобы AI был похож на chief of staff, ему мало читать файлы. Он должен видеть часть моего рабочего
+            Чтобы AI был похож на помощника-координатора, ему мало читать файлы. Он должен видеть часть моего рабочего
             мира через connectors, MCP и APIs. Но доступ к инструментам не отменяет правила: источник правды
             должен быть понятен, действие должно проверяться, внешняя отправка должна быть осознанной.
           </p>
@@ -468,7 +473,7 @@
             третьи создают документы, четвёртые доставляют результат в Telegram или браузер.
           </p>
           <p>
-            Я выбрал Cortex как свою рабочую среду, но сам принцип не привязан к одному продукту. Такую систему
+            Я выбрал Codex как свою рабочую среду, но сам принцип не привязан к одному продукту. Такую систему
             можно повторить в Claude Co-work, Claude Code, Codex или даже на local/open-source LLMs, если у них
             есть доступ к файлам, инструментам, правилам и проверке результата.
           </p>
@@ -590,7 +595,7 @@
             <span>Пример из моего digest</span>
             <h3>Personal AI Is the New Personal Computer</h3>
             <div><strong>Суть</strong><ul><li>Персональный AI становится не отдельным chatbot, а рабочей средой вокруг человека.</li><li>Сила появляется, когда у AI есть файлы, skills, память, инструменты и понятная проверка человеком.</li></ul></div>
-            <div><strong>Тезисы</strong><ul><li>“Thin harness, fat skills”: сама среда может быть общей, а уникальная логика живёт в markdown-skills.</li><li>Хорошая работа с AI требует больше контекста, а не только более короткого prompt.</li></ul></div>
+            <div><strong>Тезисы</strong><ul><li>Тонкая оболочка, толстые навыки: сама среда может быть общей, а уникальная логика живёт в markdown-навыках (skills).</li><li>Хорошая работа с AI требует больше контекста, а не только более короткого prompt.</li></ul></div>
             <div><strong>Возможности для KT</strong><ul><li>Дать каждому владельцу направления не общий chatbot, а свою рабочую AI-память по проектам.</li><li>Развивать skills для паспортов, briefing, CEO-review, Lotus drafts и project updates как reusable рабочие процедуры.</li></ul></div>
             <div><strong>Как применить сегодня</strong><ul><li>Взять один проект и описать, какие 3 repeated workflows в нём уже можно превратить в skill.</li><li>Перед новым PRD прогнать проект через YouTube digests и базу знаний, чтобы найти похожие patterns и risks.</li></ul></div>
           </div>
@@ -632,14 +637,14 @@
             В начале будет много нервных моментов. Иногда кажется, что Codex “тупой” или не понимает очевидное.
             Чаще всего причина не в модели, а в плохом контексте, длинной неструктурной инструкции, неясном
             source of truth или отсутствии проверки результата. Это нормальная часть сборки OS. Skills будут
-            ломаться, prompts будут drift-ить, connectors иногда будут падать. Систему нужно поддерживать,
+            ломаться, prompts будут со временем расходиться с задачей, connectors иногда будут падать. Систему нужно поддерживать,
             как любой рабочий процесс.
           </p>
           <div class="layer-table">
             <div><strong>Shelf audit</strong><span>вернуться к задачам, которые раньше были “слишком долго”, “слишком дорого” или “я не умею”</span></div>
             <div><strong>Verify before build</strong><span>до сборки решить, как проверить результат. Если проверить нельзя, не автоматизировать</span></div>
             <div><strong>Для кого / не для кого</strong><span>строить сначала под себя и свои проекты. Не пытаться сразу сделать универсальную систему для всех</span></div>
-            <div><strong>Middle-to-middle</strong><span>человек задаёт рамку в начале, AI делает середину, человек проверяет и подписывает результат в конце</span></div>
+            <div><strong>Человек в начале и в конце</strong><span>человек задаёт рамку в начале, AI делает середину, человек проверяет и подписывает результат в конце</span></div>
             <div><strong>Top model first</strong><span>сначала доказать, что гипотеза работает на сильной модели, потом оптимизировать стоимость, скорость и deployment</span></div>
           </div>
           <div class="mode-grid">
@@ -713,6 +718,6 @@
     </div>
 
     <div class="copy-toast" role="status" aria-live="polite">Copied</div>
-    <script src="script.js?v=20260608-guide8"></script>
+    <script src="script.js?v=20260611-ds2"></script>
   </body>
 </html>
