@@ -14,95 +14,95 @@ const railData = {
   story: {
     title: "Что это такое",
     body: "Codex для меня не просто чат, а среда управления агентами: место, где рабочие агенты читают контекст, используют инструменты и возвращают результат.",
-    example: "Старт:\n1. Наговорить голосом роль и проект.\n2. Превратить запись в контекст.\n3. Разложить память по слоям.\n4. Сделать первый повторяемый рабочий процесс.",
     copy: `Role: You are my AI OS setup assistant.
-Task: Turn my raw voice notes into the first context for a personal Codex OS.
+Task: Turn my raw voice notes into the first context for my personal Codex OS.
 Goal: Help me stop re-briefing every new AI chat from zero.
 Context: I will paste a rough transcript about my role, responsibilities, projects, people, current status, decisions, blockers, and materials.
-Steps: extract my role, project types, active projects, sources of truth, recurring workflows, open gaps.
+Steps:
+1. Extract my role and responsibilities.
+2. Identify active projects and project types.
+3. Find sources of truth and recurring workflows.
+4. Propose the first folder structure.
 Output format: starter structure, first KONTEXT.md outline, first 3 actions.
 Constraints: do not invent facts, mark gaps as "не найдено", do not create files until I approve.`,
   },
   map: {
     title: "Карта KT OS",
     body: "Схема нужна, чтобы коллега увидел не папки, а связи между источниками, tools layer, контекстом, skills и automations.",
-    example: "Пример схемы:\nВходы -> Tools -> Router\nProject context -> Output -> Review\nKB + Skills + Automations -> Compound loop",
     copy: `Role: You are an operating model designer.
 Task: Map my Codex OS as a simple workflow.
 Goal: Show how signals become useful outputs.
 Context: If my folder is blank, propose the minimum map. If it exists, inspect current folders.
-Steps: identify inputs, system rules, project context, KB, skills, automations, Telegram, review.
+Steps:
+1. Identify inputs.
+2. Identify system rules and router.
+3. Map project context, KB, skills, automations, tools, Telegram, and review.
+4. Show how a new signal moves through the OS.
 Output format: Mermaid diagram plus 1 sentence per layer.
 Constraints: do not change files, keep it understandable for a first-time reader.`,
   },
   system: {
     title: "00_Система",
     body: "AGENTS.md должен быть коротким входом, а детали должны жить в нужных папках: правила, источники, проекты, automations.",
-    example: "Пример:\nAGENTS.md -> короткие правила\n00_START_HERE.md -> куда идти\ncodex_task_router.md -> типовые маршруты\nКОНТЕКСТ.md -> правда проекта",
     copy: `Role: You are my system-folder architect.
 Task: Design the minimum system layer for my Codex OS.
 Goal: Make Codex know what to read first, what not to guess, and where review is needed.
 Context: I may be migrating from Claude where the main instruction file was CLAUDE.md. In Codex the equivalent is AGENTS.md.
-Steps: propose a short AGENTS.md, START_HERE.md, task router, source-of-truth rules, review checklist.
+Steps:
+1. Propose a short AGENTS.md.
+2. Propose START_HERE.md.
+3. Propose a task router.
+4. Define source-of-truth and review rules.
 Output format: file list, purpose of each file, draft content outline.
 Constraints: show the plan before writing, keep rules short, do not create a huge encyclopedia.`,
   },
   projects: {
     title: "01_Проекты",
     body: "Проектный документ должен быть human-readable и agent-readable: понятен коллеге и достаточно структурирован для Codex.",
-    example: "Что наговорить:\nкто я\nчто за проект\nкто участвует\nчто сделано\nкакие решения\nгде материалы\nчто блокирует",
     copy: `Role: You are my project-context builder.
 Task: Turn my raw project notes into KONTEXT.md.
 Goal: Make this project understandable without re-briefing Codex every time.
 Context: I will paste a voice transcript or rough notes. If PROJECT_PATH exists, inspect it first. If not, ask only for missing essentials.
-Steps: extract goal, users, stakeholders, status, decisions, blockers, next actions, open questions, linked files.
+Steps:
+1. Extract goal, users, stakeholders, and status.
+2. Extract decisions, blockers, next actions, and open questions.
+3. Link materials and sources.
+4. Separate confirmed facts from gaps.
 Output format: KONTEXT.md draft plus missing facts.
 Constraints: write "не найдено" for gaps, do not invent owners, dates, status, or impact.`,
   },
   skills: {
     title: "Skills",
-    body: "Skills бывают стабильные и диалоговые: одни каждый раз делают одно и то же, другие помогают с оценкой по ситуации и проверкой.",
-    example: "Простые skills:\nproject-update\nkt-project-briefing\nyoutube-daily-digest\nba-task-followup\n\nУмные skills:\nceo-strategy-reviewer\nbusiness-analyst-project-intake\nkt-session-compound",
-    copy: `Role: You are my workflow-to-skill analyst.
-Task: Find which repeated tasks should become skills.
-Goal: Turn good recurring prompts into reusable Codex procedures.
-Context: If my folder is blank, use my role, project types, and repeated pain points. If it exists, inspect current work.
-Steps: find repeated formats, risk points, sources, review needs, output formats, and maintenance needs.
-Output format: 5 skill candidates with trigger, sources, steps, output, review, failure modes.
-Constraints: do not write code or create skills until I approve.`,
+    body: "Skill появляется там, где хороший рабочий разговор нужно превратить в повторяемую процедуру.",
+    copy: `Role: workflow-to-skill analyst.
+Task: choose my first 3 Codex skills.
+Goal: turn repeated real work into reusable procedures.
+Context: if my folder is blank, use my role and repeated pain points. If it exists, inspect current work. Use BA intake v2 as the pattern for BA work.
+Steps: find repeated tasks; check frequency, risk, source of truth, and review need; separate prompt, template, skill, automation; define trigger, sources, steps, output, review point, failure mode.
+Output format: ranked top 3 skills plus 2 candidates to postpone.
+Constraints: do not create skills until I approve.`,
   },
   automations: {
     title: "Автоматизации и Telegram",
-    body: "До automation нужен automation brainstorm: какие циклы повторяются, где источник правды, где review point и что пока рано автоматизировать.",
-    example: "Пример:\n09:00 BA reminders -> Telegram\n10:00 update collector -> статусы и blockers\n17:30 daily truth sync -> что обновить в source of truth\nWeekly hygiene -> структура и skills health",
-    copy: `Role: You are my Codex OS automation reviewer.
-Task: Look at my current work folder and suggest the first automations I should build.
-Goal: Find repeated work that is useful, safe, and easy to review.
-Context: I may be starting from a blank folder or an early Codex OS. If folders exist, inspect AGENTS.md, START_HERE.md, project contexts, skills, and recent notes. If not, ask for my role, projects, and repeated tasks.
-Steps:
-1. Identify repeated tasks.
-2. Separate prompts, templates, skills, and automations.
-3. For each automation candidate, define inputs, source of truth, output, review point, and risk.
-4. Mark what should not be automated yet.
-Output format:
-- Top 5 candidates
-- Why it matters
-- Source of truth
-- Human review point
-- First safe version
-Constraints: do not create files, send messages, or change automations without approval. Do not invent tools or integrations I do not have.`,
+    body: "Daily sync нужен не как отчёт, а как утренняя сверка: что изменилось и куда должен попасть каждый сигнал.",
+    copy: `Role: Codex OS automation designer.
+Task: design my first daily sync loop.
+Goal: see what changed in the last 24 hours and where each signal should go.
+Context: I may have one project and no automations. If a folder exists, inspect AGENTS.md, START_HERE.md, project contexts, task sources, Telegram notes, and recent files.
+Steps: list signal sources; define source of truth for project facts, tasks, management status, and reusable insights; propose digest structure; mark human review; mark what not to automate.
+Output format: first safe loop, sources, output, review point, risks, 3-day trial checklist.
+Constraints: do not send messages, write to task systems, or update management records without approval. Do not invent tools I do not have.`,
   },
   tools: {
     title: "Инструменты и MCP",
-    body: "Практичный порядок: сначала локальная папка, потом Drive/Sheets, потом GitHub Pages для публичных прототипов.",
-    example: "Пример tools layer:\nLocal folder -> стабильный skeleton\nGoogle Drive -> shared materials\nGoogle Sheets -> Реестр\nGitHub Pages -> public preview\nMCP/connectors -> tools layer",
-    copy: `Role: You are my tools-layer mapper.
-Task: Describe which tools my Codex OS needs.
-Goal: Separate memory, action, verification, and delivery.
-Context: Start local-first. Add Google Drive and Google Sheets after the folder skeleton is clear. Add GitHub Pages if I build prototypes.
-Steps: list tools for reading sources, drafting documents, checking output, sending results, and publishing prototypes.
-Output format: table with tool, purpose, source of truth, allowed actions, review needed.
-Constraints: use simple BA/PM language, avoid implementation details.`,
+    body: "Tools дают Codex глаза и руки. Дизайн-система даёт ему визуальную память, чтобы результаты не выглядели случайно.",
+    copy: `Role: tools and design-system mapper.
+Task: map the tools layer for my Codex OS.
+Goal: separate memory, action, verification, delivery, and visual consistency.
+Context: start local-first. Add Drive and Sheets after the folder skeleton is clear. Add GitHub Pages for prototypes. Use DS for guides, webapps, and decks.
+Steps: list tools for reading sources, drafting documents, checking output, delivery, public previews, and visual rules.
+Output format: table with tool, purpose, source of truth, allowed actions, review needed, first safe use.
+Constraints: simple BA/PM language, no low-level implementation details.`,
   },
   knowledge: {
     title: "База знаний",
@@ -117,40 +117,25 @@ Output format: README draft plus 5 routing examples.
 Constraints: do not store current project status in KB, do not edit files without approval.`,
   },
   youtube: {
-    title: "Пример YouTube-дайджеста",
-    body: "Видео из playlist To Summarize становятся базой идей: их можно прогонять через новый проект, чтобы найти patterns, risks и skills.",
-    example: "Пример формата:\nСуть\n- Почему видео стоит внимания.\n- Как оно связано с моей рабочей OS.\nТезисы\n- 2-5 главных мыслей.\n- Без пересказа ради пересказа.\nВозможности для KT\n- Где применить в проектах.\n- Какой skill или prompt может появиться.\nКак применить сегодня\n- Один маленький следующий шаг.\n- Что сохранить в базу знаний.",
-    copy: `Role: You are my project research partner.
-Task: Run PROJECT_PATH through my YouTube digests and knowledge base.
-Goal: Find patterns, risks, prompts, and skill ideas before I start building.
-Context: If PROJECT_PATH exists, read its KONTEXT.md first. If not, ask for a 5-line project brief.
-Steps: search relevant digests, extract 5-7 insights, connect each to project decisions.
-Output format: insight, source, why it applies, what to try today, what needs review.
-Constraints: do not invent sources, do not summarize videos by title only.`,
-  },
-  choose: {
-    title: "Как выбрать, что строить",
-    body: "Сначала докажите, что гипотеза работает на сильной модели. Потом оптимизируйте стоимость, скорость и развёртывание.",
-    example: "Пример фильтра:\nTop model first -> проверить возможно ли\nVerify before build -> как проверить\nЧеловек в начале и в конце -> человек -> AI -> человек\nOptimize later -> local LLM, кеш, prompts, guardrails",
-    copy: `Role: You are my build-prioritization coach.
-Task: Decide what should become a prompt, template, skill, or automation.
-Goal: Build only what is useful, repeatable, and checkable.
-Context: If my OS is new, use one project and one workflow as the baseline.
-Steps: score candidates by frequency, risk, source of truth, review need, ease of testing.
-Output format: 10 candidates, type, reason, first 3 to build now.
-Constraints: do not recommend automation when a prompt or template is enough.`,
-  },
-  copy: {
-    title: "7-day starter plan",
-    body: "Новичку нужно пройти путь: voice dump, folder skeleton, проектный контекст, первый workflow, tools layer, review и compound.",
-    example: "Starter kit:\nDay 1 -> voice dump\nDay 2 -> AGENTS/START_HERE\nDay 3 -> KONTEXT.md\nDay 4 -> reusable prompt\nDay 5 -> skill candidate\nDay 6 -> tools layer\nDay 7 -> review + compound",
-    copy: `Role: You are my seven-day Codex OS coach.
-Task: Guide me from blank state to a working personal AI OS.
-Goal: Build a usable v1 in 7 days.
-Context: My role is ROLE. My main project types are PROJECT_TYPES. I may have no folders yet.
-Steps: give one concrete action per day: voice dump, system rules, project context, reusable prompt, skill candidate, tools layer, review and compound.
-Output format: 7-day checklist with done criteria and copyable prompts.
-Constraints: keep it simple, do not propose complex automations before one project context works.`,
+    title: "YouTube digest prompt",
+    body: "Это сжатый prompt из моего YouTube skill: transcript first, KT format, project relevance, Telegram delivery only after successful save.",
+    copy: `Role: YouTube Manual Digest agent for KT.
+Task: process one YouTube URL end-to-end.
+Goal: save transcript, KT-format summary, daily digest entry, processed state, then send summary to Telegram.
+Context: KT folder is /Users/yerzhanassanov/Library/CloudStorage/GoogleDrive-yerzhan.assanov@gmail.com/My Drive/KT. Target folder: 03_База знаний/YouTube/. Use TranscriptAPI as the only transcript source.
+Steps:
+1. Extract 11-char videoId from the URL.
+2. Read YouTube/.state/processed.json. If videoId is already summarized, stop and ask whether rerun is needed.
+3. Fetch transcript and metadata via TranscriptAPI. If transcript is missing, 404, empty, or unavailable, hard stop: do not create files, do not update state, do not send Telegram.
+4. Create slug from title, kebab-case, around 60 chars.
+5. Save full transcript to transcripts/{slug}.md with frontmatter: title, channel, url, videoId, duration, date, type: transcript, summary link.
+6. Save summary to videos/{slug}.md in Russian with sections: Суть, Тезисы, Сложные концепции простыми словами, Кейсы/примеры/данные, Возможности для КТ, Идеи для стартапа/бизнеса, Как применить сегодня, Цитаты, transcript link.
+7. In Возможности для КТ, connect ideas to real KT projects/systems only when relevant. Be specific, not generic.
+8. Append daily digest entry to digests/YYYY-MM-DD.md with title, channel, duration, essence, summary link, transcript link.
+9. Update .state/processed.json: status summarized, date, title, last_run.
+10. After successful file/state writes, send summary to Telegram through yt-digest Bot API. Telegram failure does not roll back files/state.
+Output format: changed files, Telegram status, hard stops if any.
+Constraints: no fallback from metadata, no Whisper/audio rerun unless explicitly asked, no invented project links, no task code without full task text.`,
   },
 };
 
@@ -204,6 +189,7 @@ function setActiveSection(id) {
     railBody.textContent = data.body;
     currentExample.textContent = data.copy;
     currentCopy.dataset.copySection = id;
+    currentCopy.textContent = data.copyLabel || "Copy prompt";
   }
 
   progressLabel.textContent = `${sectionNumber} / ${sections.length}`;
@@ -217,16 +203,19 @@ function createMobilePrompt(section, id, sectionNumber) {
   const note = document.createElement("div");
   note.className = "mobile-rail-note";
   note.innerHTML = `
-    <span>Prompt ${sectionNumber} / ${sections.length}</span>
+    <details>
+      <summary>Prompt ${sectionNumber} / ${sections.length}</summary>
     <h3></h3>
     <p></p>
     <pre class="rail-example"><code></code></pre>
     <button class="primary-copy" type="button">Copy this prompt</button>
+    </details>
   `;
 
   note.querySelector("h3").textContent = data.title;
   note.querySelector("p").textContent = data.body;
   note.querySelector("code").textContent = data.copy;
+  note.querySelector("button").textContent = data.copyLabel || "Copy this prompt";
   note.querySelector("button").addEventListener("click", () => copyText(data.copy));
   section.appendChild(note);
 }

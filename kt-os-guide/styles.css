@@ -95,7 +95,7 @@ button {
 
 .report-shell {
   display: grid;
-  grid-template-columns: clamp(184px, 15vw, 220px) minmax(0, 1fr) clamp(248px, 22vw, 304px);
+  grid-template-columns: clamp(184px, 15vw, 220px) minmax(0, 1fr) clamp(292px, 24vw, 340px);
   gap: clamp(20px, 2.2vw, 32px);
   width: min(100%, 1360px);
   max-width: 100%;
@@ -113,11 +113,11 @@ button {
 
 .agent-rail {
   position: sticky;
-  top: 54px;
+  top: 50px;
   align-self: start;
   min-width: 0;
-  max-height: calc(100vh - 62px);
-  padding: 24px 0 0;
+  max-height: calc(100vh - 54px);
+  padding: 14px 0 0;
   overflow: visible;
 }
 
@@ -135,16 +135,42 @@ button {
 .contents-nav {
   display: grid;
   gap: 4px;
+  position: relative;
+  padding-left: 14px;
+}
+
+.contents-nav::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  bottom: 7px;
+  left: 4px;
+  width: 1px;
+  background: var(--divider);
 }
 
 .contents-nav a {
+  position: relative;
   display: block;
   min-height: 30px;
   padding: 5px 9px;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   color: var(--fg-muted);
   font-size: 13px;
   line-height: 1.35;
+}
+
+.contents-nav a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -13px;
+  width: 7px;
+  height: 7px;
+  transform: translateY(-50%);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--bg);
 }
 
 .contents-nav a:hover {
@@ -153,8 +179,13 @@ button {
 }
 
 .contents-nav a.active {
-  background: var(--bg-active);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
   color: var(--fg-strong);
+}
+
+.contents-nav a.active::before {
+  border-color: var(--primary);
+  background: var(--primary);
 }
 
 .pdf-link {
@@ -282,6 +313,7 @@ h1 {
 .result-card,
 .principles-grid,
 .first-step,
+.try-this,
 .prompt-block,
 .mobile-rail-note,
 .layer-table,
@@ -580,21 +612,19 @@ h1 {
 }
 
 .layer-table {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .layer-table div {
   display: grid;
-  grid-template-columns: 190px minmax(0, 1fr);
-  gap: 18px;
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--divider);
-}
-
-.layer-table div:last-child {
-  border-bottom: 0;
+  gap: 7px;
+  min-height: 86px;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--bg-soft) 55%, transparent);
 }
 
 .layer-table strong {
@@ -605,6 +635,32 @@ h1 {
 
 .layer-table span {
   color: var(--fg-muted);
+  font-size: 13px;
+  line-height: 1.36;
+}
+
+.try-this {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 13px 14px;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-lg);
+  background: transparent;
+}
+
+.try-this span {
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.try-this p {
+  margin-top: 0;
+  color: var(--fg-muted);
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .digest-example {
@@ -794,8 +850,8 @@ h1 {
 
 .rail-progress {
   display: grid;
-  gap: 8px;
-  margin-top: 16px;
+  gap: 7px;
+  margin-top: 10px;
 }
 
 .rail-progress span {
@@ -823,9 +879,16 @@ h1 {
 .rail-note {
   min-width: 0;
   padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  background: var(--bg);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--bg) 96%, var(--bg-soft));
+}
+
+.rail-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .mobile-rail-note {
@@ -841,42 +904,66 @@ h1 {
 .mobile-rail-note span {
   color: var(--primary);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .rail-note h3,
 .mobile-rail-note h3 {
-  margin-top: 6px;
+  margin-top: 5px;
   color: var(--fg-strong);
   font-size: 16px;
-  line-height: 1.18;
+  line-height: 1.12;
 }
 
 .rail-note p,
 .mobile-rail-note p {
-  margin-top: 8px;
+  margin-top: 7px;
   color: var(--fg-muted);
-  font-size: 13px;
-  line-height: 1.28;
+  font-size: 12.5px;
+  line-height: 1.26;
 }
 
 .rail-example {
-  margin: 8px 0 0;
-  padding: 8px;
-  overflow: visible;
-  max-height: none;
+  margin: 9px 0 0;
+  padding: 9px;
+  overflow: auto;
+  max-height: min(52vh, 500px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background: var(--bg-soft);
+  background: color-mix(in srgb, var(--bg-soft) 80%, var(--bg));
+  scrollbar-width: thin;
 }
 
 .rail-example code {
   color: var(--fg);
   font-family: var(--font-mono);
-  font-size: 10px;
-  line-height: 1.16;
+  font-size: 10.5px;
+  line-height: 1.18;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+}
+
+.rail-note .primary-copy {
+  width: auto;
+  min-height: 29px;
+  margin-top: 0;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--primary);
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.mobile-rail-note summary {
+  cursor: pointer;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  list-style: none;
+}
+
+.mobile-rail-note summary::-webkit-details-marker {
+  display: none;
 }
 
 .copy-toast {
@@ -943,7 +1030,13 @@ h1 {
     display: flex;
     gap: 6px;
     overflow: auto;
+    padding-left: 0;
     padding-bottom: 6px;
+  }
+
+  .contents-nav::before,
+  .contents-nav a::before {
+    display: none;
   }
 
   .contents-nav a {
@@ -973,6 +1066,7 @@ h1 {
 
   .system-grid,
   .map-cards,
+  .layer-table,
   .mode-grid,
   .flow-row,
   .flow-row-support,
@@ -999,5 +1093,12 @@ h1 {
 
   .prompt-block button {
     width: 100%;
+  }
+
+  .mobile-rail-note h3,
+  .mobile-rail-note p,
+  .mobile-rail-note .rail-example,
+  .mobile-rail-note .primary-copy {
+    margin-top: 10px;
   }
 }

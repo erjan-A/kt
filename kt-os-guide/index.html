@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KT OS для интеллектуальной работы</title>
-    <meta name="description" content="Практический гайд о том, как превратить рабочую папку в операционную систему для интеллектуальной работы: настройка, рабочие процессы, навыки, автоматизации, база знаний и семидневный стартовый план. Движок — Codex.">
-    <link rel="stylesheet" href="assets/kt-ai-tokens.css?v=20260611-ds2">
-    <link rel="stylesheet" href="assets/kt-ai-components.css?v=20260611-ds2">
-    <link rel="stylesheet" href="styles.css?v=20260611-ds2">
+    <title>KT AI OS</title>
+    <meta name="description" content="Практический гайд о том, как превратить рабочую папку в операционную систему для интеллектуальной работы: настройка, рабочие процессы, навыки, автоматизации и база знаний.">
+    <link rel="stylesheet" href="assets/kt-ai-tokens.css?v=20260611-guide4">
+    <link rel="stylesheet" href="assets/kt-ai-components.css?v=20260611-guide4">
+    <link rel="stylesheet" href="styles.css?v=20260611-guide4">
   </head>
   <body class="kt-ai-app">
     <div class="topbar">
       <div class="topbar-inner">
         <a class="topbar-brand" href="#top" aria-label="KT AI">
           <img src="assets/ktai.svg" alt="KT AI">
-          <span>KT OS Guide</span>
+          <span>KT AI OS</span>
         </a>
         <button class="kt-ai-theme-toggle" type="button" aria-label="Переключить тему" title="Переключить тему" data-mode="dark">
           <svg class="tic tic-sun" aria-hidden="true"><use href="assets/kt-ai-lucide-sprite.svg#sun"></use></svg>
@@ -41,8 +41,6 @@
             <a href="#tools">7. Инструменты и MCP</a>
             <a href="#knowledge">8. База знаний</a>
             <a href="#youtube">9. YouTube-дайджест</a>
-            <a href="#choose">10. Как выбрать, что строить</a>
-            <a href="#copy">11. Семидневный стартовый план</a>
           </nav>
         </div>
       </aside>
@@ -56,8 +54,8 @@
             <span>Версия 1.0</span>
             <span>Обновлено: 11 июня 2026</span>
           </div>
-          <h1>KT OS для интеллектуальной работы</h1>
-          <p class="subtitle">Практический гайд о том, как превратить рабочую папку в операционную систему для интеллектуальной работы: настройка, рабочие процессы, навыки, автоматизации, Telegram, MCP и семидневный стартовый план для коллег. Я собрал её на Codex, но принцип не привязан к одному инструменту.</p>
+          <h1>KT AI OS</h1>
+          <p class="subtitle">Практический гайд о том, как я превратил рабочую папку в AI operating system для Codex и Claude: контекст, проекты, skills, автоматизации, Telegram, MCP и база знаний.</p>
         </header>
 
         <section id="story" class="section">
@@ -161,6 +159,7 @@
             <span>Первый шаг</span>
             <p>Откройте диктофон или voice input в ChatGPT и наговорите всё, что помните о своей работе: кто вы, за что отвечаете, какие проекты ведёте, с кем работаете, где сейчас статус, что уже сделано, какие детали нельзя забыть. Это самый быстрый способ дать Codex первый сырой контекст.</p>
           </div>
+          <div class="try-this"><span>Try this</span><p>Наговорите голосом один проект и попросите Codex превратить это в первый `КОНТЕКСТ.md`.</p></div>
         </section>
 
         <section id="map" class="section">
@@ -216,6 +215,7 @@
             <div><strong>Skills</strong><span>Повторяемая работа становится процедурой.</span></div>
             <div><strong>Digest</strong><span>Внешние знания попадают в систему и Telegram.</span></div>
           </div>
+          <div class="try-this"><span>Try this</span><p>Нарисуйте свою карту: входы, проекты, источники правды, skills, automations и review points.</p></div>
         </section>
 
         <section id="system" class="section">
@@ -260,6 +260,7 @@
             <div><span>Prompt Copy</span><strong>Создать системный слой</strong></div>
             <button type="button">Copy</button>
           </div>
+          <div class="try-this"><span>Try this</span><p>Сделайте `AGENTS.md` коротким: роль, главные правила, где читать контекст, где нужен review.</p></div>
         </section>
 
         <section id="projects" class="section">
@@ -316,6 +317,7 @@
             <div><span>Prompt Copy</span><strong>Создать проектный контекст</strong></div>
             <button type="button">Copy</button>
           </div>
+          <div class="try-this"><span>Try this</span><p>Выберите один активный проект и проверьте, можно ли понять его без вашего устного объяснения.</p></div>
         </section>
 
         <section id="skills" class="section">
@@ -325,15 +327,14 @@
             prompt перестаёт быть разовой подсказкой и становится skill.
           </p>
           <p>
-            Skills - это то, что делает систему сильнее обычной папки. Если задача повторяется, я не хочу каждый
-            раз объяснять её заново. Я превращаю её в `SKILL.md`: когда использовать, что читать, какие шаги
-            выполнять, что проверять, где остановиться.
+            Skills - это моя библиотека рабочих процедур. Если я третий раз объясняю Codex одну и ту же задачу,
+            значит это уже не prompt. Это будущий skill: когда запускать, какие источники читать, какие шаги
+            пройти, какой результат вернуть и где остановиться на мой review.
           </p>
           <p>
-            В `05_Скиллы/Codex` уже есть skills для паспортов AI-агентов, тарифного калькулятора, project update,
-            project briefing, бизнес-аналитического intake, CEO-review, knowledge capture, Lotus email draft,
-            prompt improvement, YouTube digest, follow-up задач через Telegram, подготовки KT slides и session
-            compound.
+            В моей OS skills сгруппированы не по названиям файлов, а по работе, которую они снимают с головы:
+            память проектов, бизнес-анализ, документы по агентам, executive-review, база знаний, Telegram follow-up,
+            slides и улучшение prompts. Так проще понять, что строить себе первым.
           </p>
           <p>
             Это отражает мой рабочий стиль: если процедура повторилась несколько раз, я не хочу держать её в
@@ -348,6 +349,18 @@
             passport skill помогает собрать паспорт агента, project-update аккуратно переносит новый сигнал в
             проектный контекст, а YouTube digest превращает полезное видео в заметку, которую можно применить
             к моим проектам. В этом сила skills: удачный рабочий разговор становится повторяемой процедурой.
+          </p>
+          <p>
+            Для бизнес-аналитиков самый понятный пример - `business-analyst-project-intake-v2`. Он не начинает
+            с технологии. Он сначала проверяет 6 вещей: кто пользователь, где он работает, какой процесс сегодня,
+            какой результат нужен, какие данные есть, какой объём или baseline подтверждён и где решение остаётся
+            за человеком. Если данных мало, получается intake-бриф и вопросы. Если данных достаточно, можно идти
+            к бизнес-анализу и PRD.
+          </p>
+          <p>
+            Мне нравится этот skill потому, что он защищает от типичной ошибки: услышали “нужен AI-agent” и сразу
+            начали придумывать агента. В реальности иногда нужен шаблон, отчёт, поиск, rules engine или нормальный
+            процесс. Skill заставляет сначала понять работу человека, а уже потом выбирать AI-решение.
           </p>
           <p>
             CEO skill здесь важен отдельно. Он не “говорит за CEO” и не заменяет управленческое решение. Он
@@ -384,20 +397,16 @@
             материал уйдёт людям.
           </p>
           <div class="layer-table">
-            <div><strong>project-update</strong><span>переносит новые сигналы в проектный `КОНТЕКСТ.md`</span></div>
-            <div><strong>kt-project-briefing</strong><span>быстро восстанавливает статус, blockers, людей, системы и next actions</span></div>
-            <div><strong>business-analyst-project-intake</strong><span>разбирает новую AI-инициативу до PRD, вопросов и формата продукта</span></div>
-            <div><strong>ai-agent-passport</strong><span>создаёт паспорт AI-агента в Word по KT-логике</span></div>
-            <div><strong>ai-agent-tariff-calculator</strong><span>считает стоимость агента по паспорту и тарифной логике</span></div>
-            <div><strong>ceo-strategy-reviewer</strong><span>проверяет проект, письмо, демо или стратегию через симуляцию CEO-логики</span></div>
-            <div><strong>kt-knowledge-capture</strong><span>сохраняет reusable insights из внешних источников в базу знаний</span></div>
-            <div><strong>kt-session-compound</strong><span>после рабочей сессии решает, что сохранить как learning, rule или skill</span></div>
-            <div><strong>youtube-daily / manual digest</strong><span>разбирает видео и связывает идеи с KT, проектами и следующими действиями</span></div>
-            <div><strong>ba-task-followup</strong><span>ведёт Telegram follow-up по задачам аналитиков через Plane</span></div>
-            <div><strong>lotus-email-draft</strong><span>готовит короткие деловые черновики Lotus/email</span></div>
-            <div><strong>kt-open-design-slides</strong><span>собирает KT decks через Open Design и KT Slides Design System</span></div>
-            <div><strong>prompt-improver</strong><span>улучшает prompts, если workflow ещё рано превращать в skill</span></div>
+            <div><strong>Project memory</strong><span>`project-update` и `kt-project-briefing`: обновить правду проекта и быстро восстановить картину</span></div>
+            <div><strong>BA / PRD</strong><span>`business-analyst-project-intake-v2`: превратить сырой запрос в intake-бриф, вопросы или PRD</span></div>
+            <div><strong>Agent documents</strong><span>`ai-agent-passport` и `ai-agent-tariff-calculator`: паспорт агента и расчёт стоимости</span></div>
+            <div><strong>Executive review</strong><span>`ceo-strategy-reviewer`: проверить материал на эффект, владельца, baseline, next step и слабые места</span></div>
+            <div><strong>Knowledge</strong><span>`kt-knowledge-capture`, `youtube-daily-digest`, `youtube-manual-digest`: превращать внешние материалы в reusable insights</span></div>
+            <div><strong>Follow-up</strong><span>`ba-task-followup`: собирать Telegram-апдейты по задачам и возвращать важное в source of truth</span></div>
+            <div><strong>Materials</strong><span>`lotus-email-draft` и `kt-open-design-slides`: письма, slides и материалы в стиле KT</span></div>
+            <div><strong>Prompt quality</strong><span>`prompt-improver`: улучшить prompt, когда workflow ещё рано превращать в skill</span></div>
           </div>
+          <div class="try-this"><span>Try this</span><p>Найдите одну задачу, которую вы объясняли AI уже 3 раза. Это первый кандидат в skill.</p></div>
         </section>
 
         <section id="automations" class="section">
@@ -412,11 +421,22 @@
             weekly hygiene и skills/connector health checks.
           </p>
           <p>
-            Самый важный automation - KT daily truth sync. Его задача не “сделать отчёт ради отчёта”, а каждый
-            день проверять, что рабочая правда не расползлась. Он смотрит Реестр как management card, читает
-            проектные `КОНТЕКСТ.md`, проверяет Plane как источник задач, читает Telegram-сигналы коллег через
-            MCP, смотрит мои Codex-чаты за последние 24 часа и собирает digest: что изменилось, какие проекты
-            затронуты, где нужен update, где есть blocker, что нельзя записывать без подтверждения.
+            Самый важный automation - KT daily truth sync. Я использую его как утреннюю сверку реальности.
+            За день рабочая правда может разъехаться: часть в Telegram, часть в Plane, часть в проектной папке,
+            часть в реестре, часть в моих последних Codex-сессиях. Daily sync собирает эти сигналы в одну картину:
+            что изменилось, какие проекты затронуты, где нужен update, где есть blocker и где нельзя писать без
+            моего подтверждения.
+          </p>
+          <p>
+            Это не новый “источник правды”. Это audit trail и рабочий фильтр. Детальная правда остаётся в
+            проектном `КОНТЕКСТ.md`, management card - в Реестре, задачи - в Plane, reusable инсайты - в базе
+            знаний. Daily sync помогает понять, куда должен попасть каждый новый сигнал.
+          </p>
+          <p>
+            Простой пример. Коллега пишет в Telegram, что по проекту появился blocker или задача фактически
+            закрыта. Сам Telegram не становится памятью проекта. Codex должен поднять этот сигнал, проверить
+            проектный контекст и предложить: обновить `КОНТЕКСТ.md`, подготовить proposed update для Plane или
+            оставить вопрос, если фактов не хватает.
           </p>
           <p>
             Это похоже на ежедневную уборку рабочего стола. Если не делать sync, решения остаются в чатах,
@@ -445,16 +465,17 @@
             стать template, часть skill, и только самые регулярные циклы должны стать automation.
           </p>
           <div class="layer-table">
-            <div><strong>KT daily truth sync</strong><span>ежедневно собирает новые сигналы и показывает, какие источники правды нужно обновить</span></div>
+            <div><strong>KT daily truth sync</strong><span>утренняя сверка: что изменилось за 24 часа и куда должен попасть каждый сигнал</span></div>
             <div><strong>YouTube daily digest</strong><span>каждое утро превращает новые видео из моего списка в KT-relevant идеи</span></div>
             <div><strong>BA task reminders</strong><span>напоминает аналитикам о задачах Plane через Telegram</span></div>
             <div><strong>BA update collector</strong><span>собирает ответы аналитиков и помогает понять, что стало done, progress, blocker или new task</span></div>
             <div><strong>Еженедельная гигиена</strong><span>раз в неделю проверяет структуру папки, навигацию, расхождения в навыках и кандидатов на чистку</span></div>
           </div>
-          <div class="prompt-block" data-prompt="Role: Codex OS automation reviewer. Task: look at my current work folder and suggest the first automations I should build. Goal: find repeated work that is useful, safe, and easy to review. Context: I may be starting from a blank folder or an early Codex OS. If folders exist, inspect AGENTS.md, START_HERE.md, project contexts, skills, and recent notes. If not, ask for my role, projects, and repeated tasks. Steps: identify repeated tasks; separate prompts, templates, skills, and automations; define inputs, source of truth, output, review point, and risk; mark what should not be automated yet. Output format: Top 5 candidates, why it matters, source of truth, human review point, first safe version. Constraints: do not create files, send messages, or change automations without approval. Do not invent tools or integrations I do not have.">
+          <div class="prompt-block" data-prompt="Role: Codex OS automation designer. Task: design my first daily sync loop. Goal: help me see what changed in my work during the last 24 hours and where each signal should go. Context: I may have only one project and no automations yet. If a folder exists, inspect AGENTS.md, START_HERE.md, project contexts, task sources, Telegram notes, and recent files. Steps: list signal sources; define source of truth for project facts, tasks, management status, and reusable insights; propose a daily digest structure; mark what needs human review; mark what should not be automated yet. Output format: first safe daily sync loop, sources, output, review point, risks, 3-day trial checklist. Constraints: do not send messages, write to task systems, or update management records without approval. Do not invent tools I do not have.">
             <div><span>Prompt Copy</span><strong>Найти первые automations</strong></div>
             <button type="button">Copy</button>
           </div>
+          <div class="try-this"><span>Try this</span><p>Опишите один ежедневный sync: какие сигналы проверять, куда писать правду, где нужен ваш review.</p></div>
         </section>
 
         <section id="tools" class="section">
@@ -473,11 +494,6 @@
             третьи создают документы, четвёртые доставляют результат в Telegram или браузер.
           </p>
           <p>
-            Я выбрал Codex как свою рабочую среду, но сам принцип не привязан к одному продукту. Такую систему
-            можно повторить в Claude Co-work, Claude Code, Codex или даже на local/open-source LLMs, если у них
-            есть доступ к файлам, инструментам, правилам и проверке результата.
-          </p>
-          <p>
             Практический порядок важен. Я бы начинал с локальной папки на компьютере, а уже потом подключал
             Google Drive. У меня была ошибка: когда рабочая папка сразу живёт в Google Drive, иногда появляются
             проблемы с доступом, синхронизацией и тем, как Codex видит файлы. Локальная папка сначала даёт
@@ -488,6 +504,19 @@
             Реестра как management card. GitHub я подключил отдельно для прототипов: если Codex собрал страницу
             или webapp, можно быстро получить публичную ссылку через GitHub Pages и показать результат коллегам
             без отдельного сервера.
+          </p>
+          <p>
+            Отдельный слой - дизайн-система. Это не “красота” и не набор цветов. Это память о том, как должны
+            выглядеть рабочие материалы KT AI: guide pages, prototypes, внутренние webapps и decks. Когда Codex
+            видит дизайн-систему, мне не нужно каждый раз объяснять отступы, карточки, кнопки, light/dark theme
+            и общий стиль. Я могу сказать: “собери в нашей DS”, и результат уже ближе к тому, что можно показать
+            коллегам.
+          </p>
+          <p>
+            Для slides я использую отдельный маршрут: Open Design и KT Slides Design System. Там правило другое:
+            один сильный тезис на слайд, минимум текста, понятная визуальная структура и никаких придуманных
+            цифр. Это тоже часть OS: Codex не просто пишет текст, а помогает выпускать материалы в одном рабочем
+            языке.
           </p>
           <p>
             MCP и connectors дают ассистенту глаза и руки. Без них он видит только текст в чате. С ними он может
@@ -502,6 +531,8 @@
             <div><strong>Google Drive</strong><span>документы, материалы и shared files, когда локальный skeleton уже понятен</span></div>
             <div><strong>Google Sheets</strong><span>Реестр как management card, не как место для всех деталей проекта</span></div>
             <div><strong>GitHub Pages</strong><span>быстрый публичный preview для прототипов, guide и webapps</span></div>
+            <div><strong>KT AI Design System</strong><span>визуальная память для guide pages, prototypes, тем, карточек и компонентов</span></div>
+            <div><strong>KT Slides Design System</strong><span>правила для executive decks через Open Design: один тезис, сильная структура, проверенные факты</span></div>
             <div><strong>Browser / Chrome</strong><span>проверка веб-страниц, прототипов, интерфейсов и визуальных изменений</span></div>
             <div><strong>Word / Docs workflow</strong><span>паспорта AI-агентов, PRD, briefing, документы для руководителя или бизнес-заказчика</span></div>
             <div><strong>Plane / Sheets / Lotus</strong><span>задачи, реестр, письма и операционные сигналы, которые должны попадать в правильный source of truth</span></div>
@@ -509,10 +540,11 @@
           <div class="quote-block">
             <p>Инструмент без правила опасен. Правило без инструмента медленное. KT OS соединяет оба слоя.</p>
           </div>
-          <div class="prompt-block" data-prompt="Role: tools-layer mapper. Task: describe which tools my Codex OS needs. Goal: separate memory, action, verification, and delivery. Context: if tools are not connected yet, propose a minimum starter set. Steps: list tools for reading sources, drafting documents, checking output, sending results. Output format: table with tool, purpose, source of truth, allowed actions, review needed. Constraints: use simple BA/PM language, avoid implementation details.">
+          <div class="prompt-block" data-prompt="Role: Codex OS tools and design-system mapper. Task: map the tools and design-system layer for my Codex OS. Goal: separate memory, action, verification, delivery, and visual consistency. Context: start local-first. Add Google Drive and Sheets after the folder skeleton is clear. Add GitHub Pages for prototypes. Use the design system when building guide pages, prototypes, or decks. Steps: list tools for reading sources, drafting documents, checking output, sending results, publishing prototypes, and applying visual rules. Output format: table with tool, purpose, source of truth, allowed actions, review needed, first safe use. Constraints: use simple BA/PM language, avoid low-level implementation details.">
             <div><span>Prompt Copy</span><strong>Спроектировать tools layer</strong></div>
             <button type="button">Copy</button>
           </div>
+          <div class="try-this"><span>Try this</span><p>Разделите свои tools на 4 группы: read, write, verify, deliver. Не подключайте всё сразу.</p></div>
         </section>
 
         <section id="knowledge" class="section">
@@ -545,6 +577,7 @@
             похожие паттерны, прошлые ошибки, принципы из внешних источников, релевантные skills и вопросы,
             которые стоит задать бизнес-заказчику до разработки.
           </p>
+          <div class="try-this"><span>Try this</span><p>Возьмите один внешний материал и решите: это KB, проектный context, будущий skill или просто ссылка.</p></div>
         </section>
 
         <section id="youtube" class="section">
@@ -599,101 +632,7 @@
             <div><strong>Возможности для KT</strong><ul><li>Дать каждому владельцу направления не общий chatbot, а свою рабочую AI-память по проектам.</li><li>Развивать skills для паспортов, briefing, CEO-review, Lotus drafts и project updates как reusable рабочие процедуры.</li></ul></div>
             <div><strong>Как применить сегодня</strong><ul><li>Взять один проект и описать, какие 3 repeated workflows в нём уже можно превратить в skill.</li><li>Перед новым PRD прогнать проект через YouTube digests и базу знаний, чтобы найти похожие patterns и risks.</li></ul></div>
           </div>
-        </section>
-
-        <section id="choose" class="section">
-          <h2>10. Как выбрать, что строить</h2>
-          <p>
-            После всех слоёв появляется естественный риск: хочется автоматизировать всё. Я делаю наоборот:
-            сначала выбираю самый маленький repeatable workflow, который можно проверить.
-          </p>
-          <p>
-            Последовательность такая: сначала структура папок, потом контексты, потом prompts, потом skills,
-            потом automations. Если перепрыгнуть сразу к automation, Codex будет быстро делать неправильные
-            вещи. Если сначала собрать контекст и правила, даже простой prompt начинает работать лучше.
-          </p>
-          <p>
-            Не всё нужно превращать в skill или automation. Я выбираю по простому правилу: если задача повторяется,
-            имеет стабильный формат, требует проверки источников или часто ломается на одном и том же месте,
-            её надо формализовать.
-          </p>
-          <p>
-            Если задача разовая, достаточно prompt. Если задача повторяется раз в неделю, нужен template. Если
-            есть строгие шаги и safety rules, нужен skill. Если задача должна запускаться без меня по расписанию,
-            нужна automation.
-          </p>
-          <p>
-            Для любого проекта с LLM я сначала проверяю гипотезу на сильных proprietary top models. Нужно быстро
-            понять: задача вообще решается, качество достаточно хорошее, workflow можно проверить. Только после
-            этого есть смысл оптимизировать систему: менять модель, удешевлять запуск, переносить часть логики
-            в локальные open-source LLMs, добавлять более строгие проверки, templates или более узкие prompts.
-          </p>
-          <p>
-            Это защищает от преждевременной инженерии. Если сильная модель не может стабильно решить задачу,
-            локальная модель почти точно не спасёт проект. Сначала надо доказать ценность и критерий проверки,
-            потом уже думать о стоимости, скорости, deployment и on-prem вариантах.
-          </p>
-          <p>
-            В начале будет много нервных моментов. Иногда кажется, что Codex “тупой” или не понимает очевидное.
-            Чаще всего причина не в модели, а в плохом контексте, длинной неструктурной инструкции, неясном
-            source of truth или отсутствии проверки результата. Это нормальная часть сборки OS. Skills будут
-            ломаться, prompts будут со временем расходиться с задачей, connectors иногда будут падать. Систему нужно поддерживать,
-            как любой рабочий процесс.
-          </p>
-          <div class="layer-table">
-            <div><strong>Shelf audit</strong><span>вернуться к задачам, которые раньше были “слишком долго”, “слишком дорого” или “я не умею”</span></div>
-            <div><strong>Verify before build</strong><span>до сборки решить, как проверить результат. Если проверить нельзя, не автоматизировать</span></div>
-            <div><strong>Для кого / не для кого</strong><span>строить сначала под себя и свои проекты. Не пытаться сразу сделать универсальную систему для всех</span></div>
-            <div><strong>Человек в начале и в конце</strong><span>человек задаёт рамку в начале, AI делает середину, человек проверяет и подписывает результат в конце</span></div>
-            <div><strong>Top model first</strong><span>сначала доказать, что гипотеза работает на сильной модели, потом оптимизировать стоимость, скорость и deployment</span></div>
-          </div>
-          <div class="mode-grid">
-            <article><span>Prompt</span><h3>Разовая задача</h3><p>Написать письмо, кратко разобрать материал, подготовить список вопросов.</p></article>
-            <article><span>Template</span><h3>Повторяемый формат</h3><p>Briefing, PRD, статус, daily digest, meeting note.</p></article>
-            <article><span>Skill</span><h3>Повторяемый workflow</h3><p>Паспорт агента, тариф, project update, YouTube digest.</p></article>
-            <article><span>Automation</span><h3>Регулярный запуск</h3><p>Daily sync, YouTube digest, reminders, health checks.</p></article>
-          </div>
-        </section>
-
-        <section id="copy" class="section coda">
-          <h2>11. Семидневный starter plan</h2>
-          <p>
-            Если вы хотите собрать свою версию, не копируйте всю мою KT-папку. Скопируйте принцип: система,
-            проекты, источники, skills, automations, knowledge base. Начните с одного проекта и одного workflow.
-          </p>
-          <p>
-            Новичку важно не пытаться построить всё за один день. Сначала надо собрать минимальную рабочую
-            петлю: один проект, один контекст, один reusable prompt, один skill-кандидат и один регулярный
-            источник входящих сигналов. Тогда система начинает приносить пользу сразу, а не после большой
-            настройки.
-          </p>
-          <div class="quote-block">
-            <p>Минимальная цель на первый час: один проектный `КОНТЕКСТ.md`, один router, один reusable prompt и ясный ответ на вопрос “где теперь живёт правда по этому проекту?”</p>
-          </div>
-          <div class="layer-table">
-            <div><strong>День 1</strong><span>Наговорите голосом всё о своей роли, обязанностях и одном реальном проекте. Пусть Codex превратит это в raw context.</span></div>
-            <div><strong>День 2</strong><span>Создайте `00_Система/START_HERE.md`: что читать первым, что нельзя выдумывать, где нужен review.</span></div>
-            <div><strong>День 3</strong><span>Соберите проектный `КОНТЕКСТ.md`: цель, статус, люди, материалы, решения, blockers, next actions.</span></div>
-            <div><strong>День 4</strong><span>Выберите один повторяемый формат: briefing, PRD, письмо, meeting note, project update или digest.</span></div>
-            <div><strong>День 5</strong><span>Превратите лучший prompt в первый skill-кандидат: trigger, sources, steps, output, review.</span></div>
-            <div><strong>День 6</strong><span>Подключите первый tools layer: Drive или Sheets для чтения, GitHub Pages для публичного preview, если делаете прототипы.</span></div>
-            <div><strong>День 7</strong><span>Проведите review и compound: что сработало, что повторяется, что сохранить в `КОНТЕКСТ.md`, KB, prompt или skill, а что рано автоматизировать.</span></div>
-          </div>
-          <p>
-            Если коллега пройдёт эти 7 дней, у него уже будет не “папка с промптами”, а первая версия OS:
-            проектная память, правила для Codex, один рабочий workflow и понятный способ улучшать систему
-            после каждой задачи.
-          </p>
-          <div class="prompt-stack">
-            <div class="prompt-block" data-prompt="Role: seven-day Codex OS coach. Task: guide me from blank state to a working personal AI OS. Goal: build a usable v1 in 7 days. Context: my role is ROLE. My main project types are PROJECT_TYPES. I may have no folders yet. Steps: give one concrete action per day: project context, system rules, sources, prompt, skill candidate, delivery channel, review and compound. Output format: 7-day checklist with done criteria and copyable prompts. Constraints: keep it simple, do not propose complex automations before one project context works.">
-              <div><span>Prompt Copy</span><strong>Пройти 7 дней</strong></div>
-              <button type="button">Copy</button>
-            </div>
-            <div class="prompt-block" data-prompt="Role: workflow-to-skill analyst. Task: choose my first 3 skills and 2 automations. Goal: build only workflows that are useful, repeated, and checkable. Context: I may have only one project context so far. Steps: score candidates by repeatability, risk, frequency, source of truth, review need, value for current projects. Output format: ranked list with trigger, sources, result, review point. Constraints: do not create files or automations without confirmation.">
-              <div><span>Prompt Copy</span><strong>Выбрать первые skills</strong></div>
-              <button type="button">Copy</button>
-            </div>
-          </div>
+          <div class="try-this"><span>Try this</span><p>Перед новым PRD прогоните проект через 3 прошлых YouTube digests и выпишите risks, patterns, skill ideas.</p></div>
         </section>
 
         <footer class="footer">
@@ -704,20 +643,22 @@
 
       <aside class="agent-rail" aria-label="Section prompt">
         <div class="rail-note rail-current">
-          <span data-rail-kicker>Current section</span>
+          <div class="rail-toolbar">
+            <span data-rail-kicker>Current section</span>
+            <button class="primary-copy" type="button" data-current-copy>Copy prompt</button>
+          </div>
+          <div class="rail-progress">
+            <span data-progress-label>1 / 9</span>
+            <div><i data-progress-bar></i></div>
+          </div>
           <h3 data-rail-title>Что это такое</h3>
           <p data-rail-body>Prompt меняется по мере чтения и копируется дословно.</p>
           <pre class="rail-example"><code data-current-example>Откройте guide и двигайтесь по разделам.</code></pre>
-          <button class="primary-copy" type="button" data-current-copy>Copy current prompt</button>
-          <div class="rail-progress">
-            <span data-progress-label>1 / 11</span>
-            <div><i data-progress-bar></i></div>
-          </div>
         </div>
       </aside>
     </div>
 
     <div class="copy-toast" role="status" aria-live="polite">Copied</div>
-    <script src="script.js?v=20260611-ds2"></script>
+    <script src="script.js?v=20260611-guide4"></script>
   </body>
 </html>
